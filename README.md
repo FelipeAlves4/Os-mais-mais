@@ -10,8 +10,8 @@ Landing page estática, responsiva e gratuita para a resenha amistosa do pré-ca
 - Galeria com três modos da pantera;
 - Minigame local de aura (pontos salvos no navegador, sem placar compartilhado);
 - Compartilhamento do site e da pontuação no WhatsApp;
-- **Trilha instrumental épica original**, sintetizada localmente com Web Audio API (sem downloads, serviços pagos ou conteúdo de terceiros). Play/Pause e volume;
-- Link para ouvir o hino cantado no Suno. **O arquivo do Suno não está hospedado aqui.**
+- **Trilha instrumental de impacto e clima de batalha**, sintetizada localmente com Web Audio API (sem downloads, serviços pagos ou conteúdo de terceiros). Play/Pause e volume;
+- Link para a **música de referência fornecida pelo grupo** no YouTube (https://youtu.be/-xUkPo2q3zc), apenas para comparação. O áudio do vídeo não foi baixado, copiado, incorporado ou reproduzido no site.
 
 ## Como publicar no Vercel
 1. Vá em https://vercel.com/new e importe `FelipeAlves4/Os-mais-mais`.
@@ -32,7 +32,7 @@ O site já funciona completamente com sua arte SVG integrada. Também detecta au
 Essas quatro imagens **não estão neste commit**. Elas estão no ZIP da V2 gerado na conversa. Para usá-las, faça upload da pasta `assets` do ZIP, mantendo os nomes. O site preserva o mascote SVG como fallback se não houver imagens.
 
 ## Música e direitos
-O botão principal toca uma composição instrumental gerada em JavaScript pelo próprio navegador e não faz autoplay. O hino cantado é aberto por link, hospedado no Suno. A plataforma indica que músicas criadas no plano gratuito são destinadas ao uso pessoal e não comercial. Este projeto não tem monetização; não publique a gravação em serviços de distribuição musical sem licença apropriada.
+O botão principal toca uma composição instrumental gerada em JavaScript pelo próprio navegador e não faz autoplay. A trilha original do navegador não usa arquivos do Suno nem do vídeo no YouTube. Para tocar diretamente uma gravação de terceiros, verifique os direitos e as permissões de incorporação antes.
 
 ## Observações
 - Os versículos trazem trechos/paráfrases curtas e referências para leitura contextualizada. A Bíblia não é apresentada como garantia de vencer a gincana.
