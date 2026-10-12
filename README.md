@@ -10,8 +10,8 @@ Landing page estática, responsiva e gratuita para a resenha amistosa do pré-ca
 - Galeria com três modos da pantera;
 - Minigame local de aura (pontos salvos no navegador, sem placar compartilhado);
 - Compartilhamento do site e da pontuação no WhatsApp;
-- **Trilha instrumental de impacto e clima de batalha**, sintetizada localmente com Web Audio API (sem downloads, serviços pagos ou conteúdo de terceiros). Play/Pause e volume;
-- Link para a **música de referência fornecida pelo grupo** no YouTube (https://youtu.be/-xUkPo2q3zc), apenas para comparação. O áudio do vídeo não foi baixado, copiado, incorporado ou reproduzido no site.
+- Player incorporado do vídeo de referência do YouTube, repetindo o vídeo completo quando a incorporação for permitida;
+- O vídeo usado é https://youtu.be/-xUkPo2q3zc. O site não hospeda ou copia o áudio. A reprodução automática com som não é garantida pelos navegadores.
 
 ## Como publicar no Vercel
 1. Vá em https://vercel.com/new e importe `FelipeAlves4/Os-mais-mais`.
@@ -32,7 +32,7 @@ O site já funciona completamente com sua arte SVG integrada. Também detecta au
 Essas quatro imagens **não estão neste commit**. Elas estão no ZIP da V2 gerado na conversa. Para usá-las, faça upload da pasta `assets` do ZIP, mantendo os nomes. O site preserva o mascote SVG como fallback se não houver imagens.
 
 ## Música e direitos
-O botão principal toca uma composição instrumental gerada em JavaScript pelo próprio navegador e não faz autoplay. A trilha original do navegador não usa arquivos do Suno nem do vídeo no YouTube. Para tocar diretamente uma gravação de terceiros, verifique os direitos e as permissões de incorporação antes.
+O player tenta iniciar automaticamente sem som e oferece um botão para ativar áudio. O site usa um player incorporado do YouTube, sem baixar o áudio. Para tocar diretamente uma gravação de terceiros, verifique os direitos e as permissões de incorporação antes.
 
 ## Observações
 - Os versículos trazem trechos/paráfrases curtas e referências para leitura contextualizada. A Bíblia não é apresentada como garantia de vencer a gincana.
