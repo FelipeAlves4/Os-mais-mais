@@ -11,7 +11,7 @@ const quiz=[
 ];
 const reduced=typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 let mode='ready',lane=1,laneX=LANES[1],elapsed=0,spawnTimer=.6,life=3,score=0,combo=0,shield=false,immune=0;
-let objs=[],particles=[],qindex=0,answered=false,animation=0,last=0,best=0,sfx=true,ac=null,toaster=0,gesture=null;
+let objs=[],particles=[],qindex=0,answered=false,animation=0,last=0,best=0,sfx=true,ac=null,toaster=0,gesture=null,hudTick=0;
 // V2: power-up de pontuação, colecionáveis especiais e missões de uma partida.
 let feverCharge=0,feverTime=0,totalStars=0,totalSixSeven=0,maxCombo=0,quizCorrect=0,fxTexts=[];
 let missionClaimed={stars:false,combo:false,quiz:false};
@@ -74,7 +74,7 @@ function reset(){
  feverCharge=0;feverTime=0;totalStars=0;totalSixSeven=0;maxCombo=0;quizCorrect=0;fxTexts=[];
  missionClaimed={stars:false,combo:false,quiz:false};
  $('feverAnnounce').classList.remove('show');
- objs=[];particles=[];qindex=0;answered=false;animation=0;hidePanels();
+ objs=[];particles=[];qindex=0;answered=false;animation=0;hudTick=0;hidePanels();
  $('pauseButton').disabled=false;$('pauseButton').textContent='Ⅱ';$('pauseButton').setAttribute('aria-label','Pausar o jogo');
  hud();missions();note(730);vibrate(20)
 }
@@ -233,7 +233,7 @@ function hit(item){
 }
 function update(dt){
  if(mode!=='running')return;
- elapsed+=dt;animation+=dt;immune=Math.max(0,immune-dt);feverTime=Math.max(0,feverTime-dt);
+ elapsed+=dt;animation+=dt;hudTick+=dt;immune=Math.max(0,immune-dt);feverTime=Math.max(0,feverTime-dt);
  laneX+=(LANES[lane]-laneX)*Math.min(1,dt*18);
  spawnTimer-=dt;
  if(spawnTimer<=0){spawn();spawnTimer=Math.max(.52,.89-elapsed*.004)*rand(.86,1.18)}
@@ -251,7 +251,7 @@ function update(dt){
  particles=particles.filter(p=>p.t>0);
  for(const t of fxTexts){t.y-=42*dt;t.time-=dt}
  fxTexts=fxTexts.filter(t=>t.time>0);
- hud();
+ if(hudTick>=.1){hud();hudTick=0;}
  if(mode!=='running')return;
  if(qindex<3&&elapsed>=[20,41,56][qindex]){showQuiz();return}
  if(elapsed>=DURATION)finish(true)
