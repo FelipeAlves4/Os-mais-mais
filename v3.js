@@ -177,8 +177,8 @@ async function createAndShare(share){
   if(btn){btn.disabled=true;btn.setAttribute('aria-busy','true');}
   try{
     const blob=await makeCard(), filename='ze-manes-maranata-2026.png';
-    const file=new File([blob],filename,{type:'image/png'});
-    if(share&&navigator.share&&navigator.canShare?.({files:[file]})){
+    const file=typeof File==='function'?new File([blob],filename,{type:'image/png'}):null;
+    if(share&&file&&navigator.share&&navigator.canShare?.({files:[file]})){
       try{await navigator.share({files:[file],title:'Os Zé Manés — Maranata 2026',text:'🐆✝️ Resenha no máximo, Cristo em primeiro lugar!'});return;}
       catch(e){if(e.name==='AbortError')return;}
     }
