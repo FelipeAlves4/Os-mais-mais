@@ -1,4 +1,4 @@
-# 🐆 OS MAIS MAIS — A AURA DESPERTOU
+# 🐆 OS ZÉ MANÉS — A AURA DESPERTOU V3
 **Maranata 2026 • Grupo rosa • Cristo em primeiro lugar**
 
 Landing page estática, responsiva e gratuita para a resenha amistosa do pré-campa.
@@ -7,7 +7,7 @@ Landing page estática, responsiva e gratuita para a resenha amistosa do pré-ca
 - Entrada cinematográfica neon rosa/preto e mascote pantera em SVG original;
 - Ilustração simbólica de Cristo, mensagem bíblica e versículos por tema;
 - Explicação sobre “Maranata” em 1 Coríntios 16:22;
-- Galeria com três modos da pantera, com imagem completa, sem cortes no versículo;
+- Galeria com quatro modos da pantera, incluindo Six Seven, com imagem completa, sem cortes no versículo;
 - Minigame local de aura (pontos salvos no navegador, sem placar compartilhado);
 - Compartilhamento do site e da pontuação no WhatsApp;
 - Tela de entrada para iniciar a música por clique; player visível do YouTube, com controles de Play, fechar, reabrir e tentar novamente. O vídeo é configurado para repetir quando permitido;
@@ -19,7 +19,7 @@ Landing page estática, responsiva e gratuita para a resenha amistosa do pré-ca
 3. Root Directory: `./`; deixe Build Command vazio.
 4. Clique em **Deploy**. A página inicial é `index.html`.
 
-**Tecnologia:** um único `index.html` com CSS, JavaScript e ilustração SVG integrados. Sem `npm install`, banco de dados, frameworks ou credenciais.
+**Tecnologia:** `index.html` + `v3.css` + `v3.js` e ilustrações locais. Sem `npm install`, banco de dados, frameworks ou credenciais.
 
 ## Usando as imagens originais da V2
 O site já funciona completamente com sua arte SVG integrada. Também detecta automaticamente estas imagens opcionais em `assets/` e as usa assim que forem adicionadas ao GitHub:
@@ -41,3 +41,19 @@ Não existe garantia de autoplay com som em Chrome, Safari, Firefox, Android ou 
 - A representação artística de Jesus não é um retrato histórico.
 - A aura é apenas parte da brincadeira; não representa fé, mérito ou placar oficial.
 - As informações da pontuação ficam apenas no navegador local do visitante.
+
+## Experiência V3
+- Hero cinematográfico com botão **Despertar a Pantera**, revelação modal acessível e modo de movimento reduzido;
+- Barra discreta de progresso da leitura;
+- **Arena Bíblica** com quatro rodadas e explicações de referências (Davi e Golias, Maranata, amor de Cristo e união). Resultado local; compartilhamento por texto, sem placar global fictício;
+- **Card da Tropa:** cada visitante digita um apelido (somente em seu dispositivo) e gera um PNG de 1080 × 1350 pixels com uma arte original para WhatsApp;
+- O desbloqueio de **1.000 pontos de aura** também abre o portal visual, mas não promete vitória na gincana;
+- Mantidos o player compacto do YouTube (som dependente da política do navegador) e o minigame Six Seven;
+- A implementação V3 usa CSS e JS separados para manter o site fácil de evoluir. Os recursos da V2 continuam funcionando.
+
+### Testes rápidos após um deploy
+1. Abrir em celular e computador; acionar **Entrar com a trilha** e confirmar os controles do player.
+2. Testar o **Despertar da Pantera**, fechar por X, Escape ou botão, e conferir que o scroll retorna.
+3. Jogar todas as rodadas do quiz e testar o botão **Jogar de novo**.
+4. Criar o card com apelido curto e com 22 caracteres, baixar e abrir o PNG.
+5. Testar o modo Six Seven e o progresso de aura. Conferir que o site continua utilizável com redução de movimento ativada.
