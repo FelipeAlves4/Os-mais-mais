@@ -83,6 +83,48 @@ body.intro-active{overflow:hidden}.intro-screen{position:fixed;inset:0;z-index:1
  .mini-music iframe{height:200px;min-height:200px}
 }
 
+
+/* V5: quarteto de skins, animações de aura otimizadas e acessíveis */
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.gallery-card{min-width:0;position:relative;isolation:isolate}
+.gallery .gallery-card:last-child{grid-column:auto}
+.gallery-text{display:flex;flex-direction:column;gap:4px}
+.gallery-text h3{margin:8px 0 4px;font-size:clamp(1rem,1.5vw,1.3rem)}
+.gallery-text p{margin:0 0 8px;line-height:1.48}
+.gallery-art{height:310px;min-height:0;overflow:hidden}
+.gallery-art img{width:100%;height:100%;max-width:100%;object-fit:contain;object-position:center}
+.six-seven-card{border-color:#ff62c788;background:linear-gradient(140deg,#3a103d,#1a071d)}
+.six-seven-card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;box-shadow:inset 0 0 0 2px #ff9edf,0 0 35px #fa2caa91}
+.six-seven-art{position:relative;background:radial-gradient(circle at 50% 38%,#f34ca875,transparent 56%),#1b0827!important}
+.six-seven-art img{position:relative;z-index:1;transition:transform .5s cubic-bezier(.2,.7,.2,1);filter:drop-shadow(0 0 16px #f720a470)}
+.seven-tag{position:absolute;top:12px;left:12px;z-index:2;background:#1b061bc9;color:#fff5fc;padding:6px 11px;border:1px solid #ff79d3;border-radius:999px;box-shadow:0 0 20px #ff51bd80;font-size:.77rem;font-weight:1000;letter-spacing:.1em}
+.aura-skin-btn{width:100%;margin-top:auto;padding:11px 12px;border:1px solid #ff76d3;border-radius:8px;background:linear-gradient(135deg,#ff66c1,#e9098a);color:#23031c;font-weight:950;font-size:.7rem;letter-spacing:.04em;transition:transform .18s,box-shadow .18s}
+.aura-skin-btn:hover{transform:translateY(-2px);box-shadow:0 0 22px #ff51c08a}
+.aura-skin-btn:active{transform:scale(.97)}
+.six-seven-card.is-powered:after{animation:sixSevenFlash .72s ease both}
+.six-seven-card.is-powered .seven-tag{animation:sevenTextPulse .7s ease}
+.six-seven-card.is-powered .six-seven-art img{animation:sixSevenMove .75s ease}
+.aura-particle{position:absolute;z-index:4;left:50%;top:48%;pointer-events:none;font-size:1.1rem;filter:drop-shadow(0 0 8px #ff6bd3);animation:auraParticles .8s ease-out both}
+@keyframes sixSevenMove{0%,100%{transform:translateY(0) rotate(0)}22%{transform:translateY(-6px) rotate(-3deg)}48%{transform:translateY(2px) rotate(3deg)}75%{transform:translateY(-9px) rotate(-2deg)}}
+@keyframes sixSevenFlash{0%,100%{opacity:0}45%{opacity:1}}
+@keyframes sevenTextPulse{25%{transform:scale(1.16)}60%{transform:scale(.95)}100%{transform:scale(1)}}
+@keyframes auraParticles{0%{opacity:1;transform:translate(-50%,-50%) scale(.3)}100%{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.3)}}
+/* Itens inicialmente visíveis por padrão: apenas esconde durante JS + observador funcional. */
+.js-motion .reveal:not(.is-visible){opacity:0;transform:translateY(26px)}
+.js-motion .reveal{transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,0ms)}
+.js-motion .reveal.is-visible{opacity:1;transform:translateY(0)}
+.hero .mascot:before{content:"";position:absolute;inset:15%;border:1px solid #ff54b636;border-radius:50%;pointer-events:none;animation:auraBreathe 5s ease-in-out infinite;box-shadow:0 0 85px #ff269036}
+@keyframes auraBreathe{0%,100%{opacity:.26;transform:scale(.93)}50%{opacity:.64;transform:scale(1.06)}}
+@media(min-width:1101px){.gallery-art{height:290px}}
+@media(max-width:1100px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery .gallery-card:last-child{grid-column:auto}.gallery-art{height:350px}}
+@media(max-width:600px){.gallery{grid-template-columns:1fr}.gallery-art{height:360px}.gallery .gallery-card:last-child{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){
+  .js-motion .reveal:not(.is-visible){opacity:1;transform:none}
+  .js-motion .reveal{transition:none}
+  .hero .mascot:before,.six-seven-card.is-powered:after,.six-seven-card.is-powered .seven-tag,.six-seven-card.is-powered .six-seven-art img,.aura-particle{animation:none!important}
+  .aura-skin-btn{transition:none}
+}
+
 </style>
 </head>
 <body class="intro-active">
@@ -132,7 +174,7 @@ body.intro-active{overflow:hidden}.intro-screen{position:fixed;inset:0;z-index:1
 <section class="christ" id="cristo"><div class="container christ-inner"><div><span class="label">02 / O QUE IMPORTA</span><h2>NOSSA LUZ<br><em>VEM DELE.</em></h2><p>Mais importante que vencer qualquer desafio é refletir o amor de Jesus Cristo em tudo o que fazemos — até na resenha.</p><div class="quote-card">“Assim resplandeça a vossa luz diante dos homens...”<small>MATEUS 5:16 • TRECHO</small></div><a class="btn outline" href="https://www.bible.com/pt/bible/1608/MAT.5.16" target="_blank" rel="noopener noreferrer">LER NA BÍBLIA ↗</a></div><div><svg class="art" viewBox="0 0 480 450" role="img" aria-label="Representação simbólica de Jesus em uma paisagem iluminada"><defs><radialGradient id="halo"><stop stop-color="#fffae0" stop-opacity=".8"/><stop offset="1" stop-color="#ffe39c" stop-opacity="0"/></radialGradient></defs><circle cx="270" cy="159" r="175" fill="url(#halo)"/><circle cx="270" cy="160" r="56" fill="#ffe3a2" opacity=".5"/><path d="M0 370 Q90 270 190 366 Q270 286 480 358 V450 H0Z" fill="#5a1b53"/><path d="M190 380 Q238 327 262 252 Q268 243 285 252 Q312 325 358 383Z" fill="#f4d5c0"/><path d="M234 269 Q206 290 204 373 L253 371 271 271Z" fill="#7d3455"/><path d="M263 260 Q281 277 291 264 Q330 304 341 378 L269 377Z" fill="#f8dcc5"/><ellipse cx="270" cy="218" rx="29" ry="41" fill="#cc957b"/><path d="M241 218 Q225 154 268 163 Q311 167 300 225 Q285 188 267 193 Q247 190 241 218Z" fill="#402c35"/><path d="M245 230 Q248 268 270 264 Q292 261 296 229 Q287 247 277 247 L269 256 260 247 Q250 246 245 230Z" fill="#634044"/><path d="M268 260 Q281 247 298 258 L314 324 Q272 332 231 324 L239 264Z" fill="#eee4cc"/><path d="M234 291 Q196 318 184 374 M311 292 Q348 325 362 371" fill="none" stroke="#f7dec9" stroke-width="25" stroke-linecap="round"/><path d="M110 397 Q248 362 480 399 V451 H0V408Z" fill="#1b0a25"/></svg><div class="disclaimer">ILUSTRAÇÃO SIMBÓLICA E ARTÍSTICA • NÃO É RETRATO HISTÓRICO</div></div></div></section>
 <section class="block" id="palavra"><div class="container"><div class="section-heading"><span class="label">03 / MUNIÇÃO DE VERDADE</span><h2>O PODER ESTÁ<br><em>NA PALAVRA.</em></h2><p>Uma passagem de cada vez, a tropa cresce na fé. Leia o contexto: nenhum desses versículos promete vitória numa competição de acampamento.</p></div><div class="verse-filters" id="filters" aria-label="Filtrar versículos"><button class="chip" data-topic="todos" aria-pressed="true">TODOS</button><button class="chip" data-topic="força" aria-pressed="false">FORÇA</button><button class="chip" data-topic="coragem" aria-pressed="false">CORAGEM</button><button class="chip" data-topic="união" aria-pressed="false">UNIÃO</button><button class="chip" data-topic="amor" aria-pressed="false">AMOR</button></div><div class="verses" id="verses"></div><p class="verse-note">Textos breves ou paráfrases fiéis, com referências para consulta da passagem completa. A interpretação deve levar em conta o contexto bíblico.</p></div></section>
 <section class="maranata" id="maranata"><div class="container maranata-inner"><div class="maranata-symbol">✝</div><div><span class="label">04 / VOCÊ SABIA?</span><h2>MARANATA<span>.</span></h2><div class="translation">“Vem, Senhor!”</div><p>A expressão aramaica “Maranata” aparece em 1 Coríntios 16:22 e nos lembra da esperança na vinda de Cristo. O nome do acampamento é maior do que qualquer disputa!</p><a class="btn outline" target="_blank" rel="noopener noreferrer" href="https://www.bible.com/pt/bible/1608/1CO.16.22">1 CORÍNTIOS 16:22 ↗</a></div></div></section>
-<section class="block" id="mascote"><div class="container"><div class="section-heading"><span class="label">05 / NOSSO MASCOTE</span><h2>TRÊS MODOS.<br><em>UMA SÓ PANTERA.</em></h2><p>A pantera é o símbolo da resenha. Sem correntes, com óculos e camiseta da tropa. Agora você consegue ver as três artes completas — inclusive o versículo de Filipenses 4:13.</p></div><div class="gallery"><article class="gallery-card"><div class="gallery-art"><svg role="img" aria-label="Pantera rosa modo resenha"><use href="#pantera"></use></svg></div><div class="gallery-text"><small>SKIN 01</small><h3>MODO RESENHA</h3><p>Farmando aura até parado.</p></div></article><article class="gallery-card"><div class="gallery-art"><svg role="img" aria-label="Pantera rosa modo lendário"><use href="#pantera"></use></svg></div><div class="gallery-text"><small>SKIN 02</small><h3>MODO LENDÁRIO</h3><p>O grupo azul não tava preparado.</p></div></article><article class="gallery-card"><div class="gallery-art"><svg role="img" aria-label="Pantera rosa modo fé"><use href="#pantera"></use></svg></div><div class="gallery-text"><small>SKIN 03</small><h3>FÉ PRIMEIRO</h3><p>A resenha é nossa. A glória é de Deus.</p></div></article></div></div></section>
+<section class="block" id="mascote"><div class="container"><div class="section-heading"><span class="label">05 / NOSSO MASCOTE</span><h2>QUATRO MODOS.<br><em>UMA SÓ PANTERA.</em></h2><p>A pantera é o símbolo da resenha. Sem correntes, com óculos e camiseta da tropa. Agora você consegue ver as três artes completas — inclusive o versículo de Filipenses 4:13.</p></div><div class="gallery"><article class="gallery-card"><div class="gallery-art"><svg role="img" aria-label="Pantera rosa modo resenha"><use href="#pantera"></use></svg></div><div class="gallery-text"><small>SKIN 01</small><h3>MODO RESENHA</h3><p>Farmando aura até parado.</p></div></article><article class="gallery-card"><div class="gallery-art"><svg role="img" aria-label="Pantera rosa modo lendário"><use href="#pantera"></use></svg></div><div class="gallery-text"><small>SKIN 02</small><h3>MODO LENDÁRIO</h3><p>O grupo azul não tava preparado.</p></div></article><article class="gallery-card"><div class="gallery-art"><svg role="img" aria-label="Pantera rosa modo fé"><use href="#pantera"></use></svg></div><div class="gallery-text"><small>SKIN 03</small><h3>FÉ PRIMEIRO</h3><p>A resenha é nossa. A glória é de Deus.</p></div></article><article class="gallery-card six-seven-card" id="sixSevenCard" data-skin="six-seven"><div class="gallery-art six-seven-art"><span class="seven-tag" aria-hidden="true">6 ✦ 7</span><img src="assets/2ce24947-ec7f-4dc3-8f23-1fa68746e07c.png" alt="Pantera rosa, mascote dos Zé Manés, fazendo o meme Six Seven com as duas mãos para cima" loading="lazy" decoding="async"></div><div class="gallery-text"><small>SKIN 04 • NOVA</small><h3>MODO SIX SEVEN</h3><p>As duas mãos pro alto. A aura foi pro infinito! 😂</p><button class="aura-skin-btn" id="triggerSixSeven" type="button" aria-label="Ativar modo Six Seven e farmar 67 pontos de aura">⚡ ATIVAR SIX SEVEN (+67)</button></div></article></div></div></section>
 <section class="block challenge" id="aura"><div class="container challenge-box"><div class="section-heading"><span class="label">07 / DESAFIO DO PRÉ-CAMPA</span><h2>QUANTO DE AURA<br><em>VOCÊ AGUENTA?</em></h2><p class="challenge-desc">Clique para farmar aura de brincadeira. Cada clique soma 10 pontos. Aos 1.000, desbloqueie o <strong>Modo Lendário da Pantera</strong>. O resultado fica salvo só neste dispositivo.</p><p style="color:#ffd4eb">✝ Na vida real, nossa força vem de Cristo e não dos pontos.</p></div><div class="score-panel"><span class="label">SEU TOTAL DE AURA</span><div class="counter" id="score" aria-live="polite">0</div><div class="level" id="level">NÍVEL 1 • ESQUENTANDO</div><div class="bar" role="progressbar" aria-label="Progresso para 1000 de aura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress"><i id="fill"></i></div><div class="controls"><button class="btn hot" type="button" id="farm">⚡ FARMAR +10</button><button class="btn outline" type="button" id="shareAura">COMPARTILHAR ↗</button><button class="btn outline" type="button" id="resetAura">ZERAR</button></div></div></div></section>
 <section class="final"><div class="container"><span class="label">MARANATA 2026 • GRUPO ROSA</span><h2>OS MAIS<br><em>MAIS!</em></h2><p>Somos a tropa rosa. Temos muita resenha, muita união e uma fé que vai além da brincadeira.</p><p><strong>A RESENHA É NOSSA. A GLÓRIA É DE DEUS!</strong></p><div class="buttons"><button class="btn hot" id="shareSite" type="button">📲 MANDAR NO GRUPO</button><a class="btn outline" href="#inicio">VOLTAR AO TOPO ↑</a></div></div></section>
 </main><footer><strong>OS MAIS MAIS</strong> • MARANATA 2026 • FEITO PARA RESENHA, FÉ E AMIZADE • SITE SEM MONETIZAÇÃO</footer>
@@ -207,5 +249,51 @@ preferPhoto('.christ .art','assets/cristo-amanhecer.webp','Representação artí
 preferPhoto('.gallery-card:nth-child(1) svg','assets/pantera-original.webp','Pantera rosa, modo resenha');
 preferPhoto('.gallery-card:nth-child(2) svg','assets/pantera-poster.webp','Pantera rosa, modo lendário');
 preferPhoto('.gallery-card:nth-child(3) svg','assets/pantera-fe.webp','Pantera rosa, modo fé');
+
+// V5: entrada suave conforme os elementos aparecem na tela, sem bibliotecas externas.
+const prefersReducedMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false;
+if(!prefersReducedMotion&&'IntersectionObserver' in window){
+  const revealItems=[...document.querySelectorAll('.section-heading,.feature,.verse,.gallery-card,.christ-inner,.maranata-inner,.music-card,.score-panel')];
+  const visibleObserver=new IntersectionObserver((entries,observer)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}
+    });
+  },{threshold:.06,rootMargin:'0px 0px 25px 0px'});
+  revealItems.forEach((element,index)=>{
+    element.classList.add('reveal');
+    if(element.classList.contains('gallery-card'))element.style.setProperty('--reveal-delay',((index%4)*65)+'ms');
+    visibleObserver.observe(element);
+  });
+  document.documentElement.classList.add('js-motion');
+}
+// Six Seven: a pantera dança, surge uma explosão de faíscas e a brincadeira vale +67 de aura.
+const sixSevenCard=$('sixSevenCard');
+$('triggerSixSeven').addEventListener('click',()=>{
+  sixSevenCard.classList.remove('is-powered');
+  void sixSevenCard.offsetWidth;
+  sixSevenCard.classList.add('is-powered');
+  window.setTimeout(()=>sixSevenCard.classList.remove('is-powered'),900);
+  if(!prefersReducedMotion){
+    const art=sixSevenCard.querySelector('.six-seven-art');
+    for(let i=0;i<9;i++){
+      const particle=document.createElement('span');
+      particle.className='aura-particle';
+      particle.textContent=i%3===0?'✦':i%3===1?'⚡':'✧';
+      const angle=(Math.PI*2*i)/9,spread=75+(i%3)*30;
+      particle.style.setProperty('--dx',Math.round(Math.cos(angle)*spread)+'px');
+      particle.style.setProperty('--dy',Math.round(Math.sin(angle)*spread)+'px');
+      art.append(particle);
+      particle.addEventListener('animationend',()=>particle.remove(),{once:true});
+      window.setTimeout(()=>particle.remove(),1100);
+    }
+  }
+  const previous=score;
+  score=Math.min(score+67,1000000);
+  save();updateScore();
+  const flashed=$('flash');
+  flashed.classList.remove('active');void flashed.offsetWidth;flashed.classList.add('active');
+  toast(previous<1000&&score>=1000?'🐆 MODO LENDÁRIO! SIX SEVEN! +67 DE AURA!':'SIX SEVEN! +67 AURA ROSA! 🐆');
+});
+
 })();
 </script></body></html>
