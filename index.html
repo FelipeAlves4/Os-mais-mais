@@ -251,7 +251,7 @@ preferPhoto('.gallery-card:nth-child(2) svg','assets/pantera-poster.webp','Pante
 preferPhoto('.gallery-card:nth-child(3) svg','assets/pantera-fe.webp','Pantera rosa, modo fé');
 
 // V5: entrada suave conforme os elementos aparecem na tela, sem bibliotecas externas.
-const prefersReducedMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false;
+const prefersReducedMotion=typeof window.matchMedia==='function'&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!prefersReducedMotion&&'IntersectionObserver' in window){
   const revealItems=[...document.querySelectorAll('.section-heading,.feature,.verse,.gallery-card,.christ-inner,.maranata-inner,.music-card,.score-panel')];
   const visibleObserver=new IntersectionObserver((entries,observer)=>{
