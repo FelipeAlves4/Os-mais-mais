@@ -7,10 +7,10 @@ Landing page estática, responsiva e gratuita para a resenha amistosa do pré-ca
 - Entrada cinematográfica neon rosa/preto e mascote pantera em SVG original;
 - Ilustração simbólica de Cristo, mensagem bíblica e versículos por tema;
 - Explicação sobre “Maranata” em 1 Coríntios 16:22;
-- Galeria com três modos da pantera;
+- Galeria com três modos da pantera, com imagem completa, sem cortes no versículo;
 - Minigame local de aura (pontos salvos no navegador, sem placar compartilhado);
 - Compartilhamento do site e da pontuação no WhatsApp;
-- Player incorporado do vídeo de referência do YouTube, repetindo o vídeo completo quando a incorporação for permitida;
+- Tela de entrada para iniciar a música por clique; player visível do YouTube, com controles de Play, fechar, reabrir e tentar novamente. O vídeo é configurado para repetir quando permitido;
 - O vídeo usado é https://youtu.be/-xUkPo2q3zc. O site não hospeda ou copia o áudio. A reprodução automática com som não é garantida pelos navegadores.
 
 ## Como publicar no Vercel
@@ -29,10 +29,12 @@ O site já funciona completamente com sua arte SVG integrada. Também detecta au
 - `assets/pantera-fe.webp` — galeria, modo fé;
 - `assets/cristo-amanhecer.webp` — representação artística de Jesus.
 
-Essas quatro imagens **não estão neste commit**. Elas estão no ZIP da V2 gerado na conversa. Para usá-las, faça upload da pasta `assets` do ZIP, mantendo os nomes. O site preserva o mascote SVG como fallback se não houver imagens.
+As quatro imagens **já estão no repositório** e são carregadas automaticamente; o site preserva o mascote SVG como fallback quando uma imagem não carrega.
 
-## Música e direitos
-O player tenta iniciar automaticamente sem som e oferece um botão para ativar áudio. O site usa um player incorporado do YouTube, sem baixar o áudio. Para tocar diretamente uma gravação de terceiros, verifique os direitos e as permissões de incorporação antes.
+## Música, compatibilidade e direitos
+O visitante entra pelo botão **“Entrar com a trilha de aura”**. O site então tenta iniciar **com som** a reprodução no player visível do YouTube; se o navegador bloquear o autoplay, o visitante deve tocar em **▶** no vídeo. Há ainda opções de **tentar novamente**, **fechar/parar**, **reabrir** e **ouvir diretamente no YouTube**.
+
+Não existe garantia de autoplay com som em Chrome, Safari, Firefox, Android ou iOS: cada navegador define suas próprias regras e extensões/bloqueios também podem interferir. O vídeo pode não estar disponível para incorporação. A solução não baixa, hospeda nem copia o áudio da referência. Para maior compatibilidade sem YouTube, seria necessário um arquivo de áudio original/licenciado fornecido com autorização para uso no site.
 
 ## Observações
 - Os versículos trazem trechos/paráfrases curtas e referências para leitura contextualizada. A Bíblia não é apresentada como garantia de vencer a gincana.
