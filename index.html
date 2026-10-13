@@ -24,9 +24,70 @@ section.block{padding:100px 0}.section-heading{max-width:930px;margin-bottom:30p
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}@keyframes twinkle{50%{opacity:.2;transform:scale(.75)}}@keyframes marquee{to{transform:translateX(-50%)}}@keyframes turn{to{transform:rotate(360deg)}}@keyframes equal{to{height:20px}}@keyframes pulse{50%{transform:scale(1.13)}}@keyframes flash{40%{opacity:1}}
 @media(max-width:850px){.menu{display:none;position:absolute;top:74px;left:0;right:0;background:#1c0927;padding:20px;flex-direction:column;gap:18px;border-bottom:1px solid #fa44b550}.menu.open{display:flex}.menu-button{display:inline-flex;background:#ffffff0a;border:1px solid #ffffff24;border-radius:8px;color:white;padding:9px 12px;font-weight:900}.nav-row>.pill{display:none}.hero-grid{grid-template-columns:1fr;min-height:810px}.hero-copy{padding:72px 0 10px}.hero .mascot{position:absolute;right:-18%;bottom:-72px;width:70%;opacity:.8}.hero:after{background:linear-gradient(180deg,#100416 0%,transparent 75%,#100516 100%)}.hero-desc{max-width:540px}.cards,.verses{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(2,1fr)}.gallery-card:last-child{grid-column:span 2}.christ-inner{grid-template-columns:1fr 1fr}.challenge-box{grid-template-columns:1fr}.challenge-box .section-heading{margin:0}.music-card{grid-template-columns:1fr}}
 @media(max-width:560px){.container{width:calc(100% - 30px)}.hero,.hero-grid{min-height:730px}.hero h1{font-size:clamp(4.8rem,19vw,7rem);letter-spacing:-.08em}.hero-copy{padding-top:60px}.hero .mascot{width:98%;right:-40%;bottom:-20px;opacity:.8}.hero-desc{font-size:.96rem;max-width:90%}.hero-details{gap:16px;font-size:.54rem}.hero-details b{font-size:.92rem}.hero-actions{gap:8px}.btn{padding:13px 15px;font-size:.74rem}.cards,.verses,.gallery{grid-template-columns:1fr}.gallery-card:last-child{grid-column:auto}.gallery-art{height:280px}.christ-inner{grid-template-columns:1fr;gap:0;padding-top:70px;padding-bottom:50px}.christ .art{height:240px;margin:auto;object-fit:contain}.christ h2{font-size:3.5rem}.maranata-inner{grid-template-columns:1fr;gap:10px}.maranata-symbol{font-size:5rem}.music-card{padding:23px}.music-controls{align-items:stretch}.score-panel{padding:25px}.counter{font-size:4.7rem}.section-heading h2{font-size:clamp(2.8rem,12vw,4.7rem)}section.block{padding:68px 0}.maranata{padding:55px 0}.final{padding:65px 0}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
-.mascot>img{width:min(100%,530px);height:auto;max-height:640px;object-fit:contain;animation:float 5s ease-in-out infinite}.gallery-art img{width:100%;height:100%;object-fit:cover}.christ .art-photo{display:block;width:100%;max-width:520px;max-height:440px;object-fit:cover;object-position:center;border-radius:12px;box-shadow:0 0 65px #ffe8b630}</style>
+.mascot>img{width:min(100%,530px);height:auto;max-height:640px;object-fit:contain;animation:float 5s ease-in-out infinite}.gallery-art img{width:100%;height:100%;object-fit:cover}.christ .art-photo{display:block;width:100%;max-width:520px;max-height:440px;object-fit:cover;object-position:center;border-radius:12px;box-shadow:0 0 65px #ffe8b630}.youtube-shell{position:relative;width:min(100%,530px);aspect-ratio:16/9;margin:22px 0 0;border-radius:12px;overflow:hidden;border:1px solid #f55bbd6b;background:#110319}.youtube-shell iframe{display:block;width:100%;height:100%;border:0}
+
+/* Intro cinematográfica e responsiva */
+body.intro-active{overflow:hidden}.intro-screen{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;overflow:auto;background:radial-gradient(ellipse at 50% 28%,#ef2a9270,transparent 52%),linear-gradient(160deg,#090310,#250925 70%,#090310);padding:22px;transition:opacity .7s,visibility .7s}.intro-screen.hidden{opacity:0;visibility:hidden;pointer-events:none}.intro-content{position:relative;max-width:840px;width:100%;text-align:center;padding:18px 5px}.intro-panther{display:block;margin:0 auto 14px;width:min(65vw,270px);max-height:32vh;object-fit:contain;filter:drop-shadow(0 0 30px #fb37b0a0);animation:float 4s ease-in-out infinite}.intro-kicker{color:#ffc1e6;font-size:.75rem;font-weight:900;letter-spacing:.18em}.intro-title{font-size:clamp(2rem,6vw,4.6rem);line-height:1.02;letter-spacing:-.06em;margin:16px auto;font-weight:1000}.intro-title span{color:#ff66bf;text-shadow:0 0 28px #f42998a0}.intro-verse{color:#e9cbdf;line-height:1.6;margin:14px auto 22px}.intro-verse strong{display:block;color:#ffe4ae}.intro-button{border:0;border-radius:999px;padding:17px 30px;background:linear-gradient(135deg,#ff65ca,#f31291);color:#210518;font-weight:1000;letter-spacing:.08em;box-shadow:0 12px 38px #fa299c85}.intro-button:hover{transform:translateY(-2px)}.intro-note{font-size:.75rem;color:#caaeca;margin-top:15px}.intro-flash{position:fixed;inset:0;z-index:1001;pointer-events:none;opacity:0;background:radial-gradient(circle,#ff9de59c,transparent 70%)}.intro-flash.active{animation:flash .7s ease}@media(max-width:560px){.intro-panther{width:min(75vw,230px);max-height:29vh}.intro-content{padding:0}.intro-title{font-size:clamp(2.1rem,9vw,3.1rem)}.intro-button{width:100%}}@media(prefers-reduced-motion:reduce){.intro-screen{transition:none}.intro-panther{animation:none}}
+.mini-music[hidden]{display:none!important}.mini-music{position:fixed;bottom:12px;right:12px;z-index:70;background:#200b2dea;border:1px solid #f653b87a;border-radius:999px;box-shadow:0 8px 28px #0008;padding:10px 15px;pointer-events:none;max-width:calc(100vw - 24px)}.mini-music-label{display:block;letter-spacing:.09em;color:#ffb7e1;font-weight:900;font-size:.7rem;white-space:nowrap}.mini-music iframe{position:absolute;left:-9999px;top:0;width:200px;height:113px;border:0;pointer-events:none}@media(max-width:560px){.mini-music{bottom:8px;right:8px;padding:8px 12px}.mini-music-label{font-size:.62rem}}
+
+/* Galeria V3: imagens completas, sem cortar o personagem ou a Bíblia. */
+.gallery{align-items:stretch}
+.gallery-card{display:flex;flex-direction:column;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.gallery-card:hover{transform:translateY(-5px);border-color:#ff82d188;box-shadow:0 16px 55px #fc2a8740}
+.gallery-art{height:clamp(295px,29vw,380px);padding:12px;isolation:isolate;position:relative;background:radial-gradient(ellipse at center,#e339a044,#2b062e 75%)}
+.gallery-art:after{content:"";pointer-events:none;position:absolute;inset:0;border-bottom:1px solid #ff64c52b}
+.gallery-art img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center;filter:drop-shadow(0 8px 15px #1c071c88);transition:transform .25s ease}
+.gallery-card:hover .gallery-art img{transform:scale(1.035)}
+.gallery-card:nth-child(2) .gallery-art{background:radial-gradient(circle at 38% 35%,#8f196c,#160419 77%)}
+.gallery-card:nth-child(3) .gallery-art{background:radial-gradient(circle at 50% 35%,#b0558a,#210820 77%)}
+.gallery-text{flex:1}
+.hero .mascot>img{-webkit-mask-image:radial-gradient(ellipse 78% 79% at 48% 50%,#000 50%,transparent 99%);mask-image:radial-gradient(ellipse 78% 79% at 48% 50%,#000 50%,transparent 99%)}
+/* Player visível: se o autoplay falhar, a pessoa pode apertar Play diretamente no YouTube. */
+.mini-music[hidden],.music-opener[hidden]{display:none!important}
+.mini-music{position:fixed;right:16px;bottom:16px;z-index:110;width:min(355px,calc(100vw - 32px));max-height:min(85vh,460px);overflow-y:auto;padding:13px;border:1px solid #ff68c991;border-radius:17px;background:#17091feb;backdrop-filter:blur(20px);box-shadow:0 16px 65px #030004c7;pointer-events:auto}
+.mini-music-header{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:10px}
+.mini-music-label{color:#ffb7e1;font-size:.73rem;font-weight:950;letter-spacing:.07em;white-space:normal}
+.mini-music iframe{display:block;position:static;width:100%;height:214px;min-height:200px;border:0;border-radius:9px;background:#100516;pointer-events:auto}
+.music-close{font-weight:900;border-radius:50%;background:#ffffff16;color:#fff;border:1px solid #ffffff24;width:30px;height:30px;flex-shrink:0}
+.music-close:hover,.music-reload:hover{background:#fc65c551}
+.music-hint{font-size:.74rem;color:#e6d1e5;line-height:1.45;margin:10px 0}
+.music-links{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.music-reload{font-size:.68rem;font-weight:900;color:#fff;background:#fb55b324;border:1px solid #ff64bc55;padding:10px;border-radius:8px}
+.music-links a{font-size:.68rem;font-weight:900;color:#ffbadf;text-decoration:underline}
+.music-opener{position:fixed;bottom:15px;right:15px;z-index:105;color:#fff;background:#7f125a;border:1px solid #ff89d3;border-radius:999px;padding:12px 18px;box-shadow:0 6px 30px #000a;font-weight:900;font-size:.78rem}
+@media(max-width:560px){
+.gallery-art{height:350px}
+.mini-music{right:8px;bottom:8px;width:min(320px,calc(100vw - 16px));padding:10px;max-height:70vh}
+.mini-music iframe{height:200px}
+.music-opener{right:8px;bottom:8px}
+}
+@media(prefers-reduced-motion:reduce){.gallery-card,.gallery-art img{transition:none}}
+
+
+/* PLAYER COMPACTO V4
+   Video incorporado permanece visível para o visitante poder tocar Play.
+   Não tentamos contornar as restrições de autoplay do navegador/YouTube. */
+.mini-music{width:min(232px,calc(100vw - 16px));right:10px;bottom:10px;padding:8px;border-radius:12px;max-height:calc(100dvh - 20px);overflow-y:auto;box-shadow:0 10px 32px #030004a0}
+.mini-music-header{gap:7px;min-height:26px;margin-bottom:6px}
+.mini-music-label{font-size:.66rem;letter-spacing:.03em;line-height:1.2}
+.mini-music iframe{display:block;position:static;min-height:200px;height:200px;width:100%;aspect-ratio:auto;border-radius:6px}
+.music-close{width:26px;height:26px;font-size:.8rem}
+.music-links{display:flex;flex-wrap:nowrap;gap:6px;margin-top:7px}
+.music-reload{font-size:.62rem;padding:7px 8px;border-radius:6px;white-space:nowrap}
+.music-links a{font-size:.62rem;white-space:nowrap}
+.music-help{margin-top:6px;border-top:1px solid #ffffff16;padding-top:5px;color:#d7b5cf;font-size:.63rem}
+.music-help summary{cursor:pointer;line-height:1.5}
+.music-help .music-hint{margin:5px 0 0;font-size:.65rem;line-height:1.4}
+@media(max-width:560px){
+ .mini-music{width:min(226px,calc(100vw - 16px));right:8px;bottom:8px;padding:8px;max-height:calc(100dvh - 16px)}
+ .mini-music iframe{height:200px;min-height:200px}
+}
+
+</style>
 </head>
-<body>
+<body class="intro-active">
+<div class="intro-screen" id="introScreen" role="dialog" aria-modal="true" aria-labelledby="introTitle"><div class="intro-content"><img class="intro-panther" src="assets/pantera-poster.webp" alt="Pantera Rosa dos Mais Mais com aura" onerror="this.style.display='none'"><p class="intro-kicker">MARANATA 2026 • GRUPO ROSA</p><h1 class="intro-title" id="introTitle">VOCÊ ESTÁ PREPARADO PARA PRESENCIAR A <span>VERDADEIRA AURA?</span></h1><p class="intro-verse">“Tudo posso naquele que me fortalece.”<strong>Filipenses 4:13</strong></p><button id="enterSiteBtn" class="intro-button" type="button">⚡ ENTRAR COM A TRILHA DE AURA</button><p class="intro-note">A música tentará começar ao entrar. Se o navegador bloquear, é só tocar em ▶ no player que aparece.</p></div></div><div class="intro-flash" id="introFlash" aria-hidden="true"></div><aside id="miniMusic" class="mini-music" hidden aria-label="Player compacto da trilha de aura"><div class="mini-music-header"><span class="mini-music-label">♫ AURA ROSA</span><button type="button" class="music-close" id="closeMusic" aria-label="Fechar player e parar música">✕</button></div><iframe id="youtubePlayer" title="Reproduzir trilha de aura no YouTube" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><div class="music-links"><button type="button" id="reloadMusic" class="music-reload" title="Tentar iniciar a música novamente" aria-label="Tentar reproduzir novamente">↻ TENTAR</button><a href="https://youtu.be/-xUkPo2q3zc" target="_blank" rel="noopener noreferrer" title="Abrir a música no YouTube">YOUTUBE ↗</a></div><details class="music-help"><summary>Não está tocando?</summary><p id="musicHint" role="status" class="music-hint">Toque em ▶ no vídeo; seu navegador pode bloquear a reprodução automática com som.</p></details></aside><button type="button" class="music-opener" id="openMusic" hidden>♫ ABRIR MÚSICA</button>
+
 <a class="skip" href="#inicio">Pular para o conteúdo</a>
 <!-- Arte vetorial original: mascote felino estilizado, criada exclusivamente com SVG/CSS. -->
 <svg width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden"><defs>
@@ -62,17 +123,16 @@ section.block{padding:100px 0}.section-heading{max-width:930px;margin-bottom:30p
 <nav><div class="container nav-row">
 <a class="logo" href="#inicio">✦ OS <b>MAIS MAIS</b><small>MARANATA 2026 • GRUPO ROSA</small></a>
 <button class="menu-button" id="menuBtn" aria-controls="menu" aria-expanded="false">☰ MENU</button>
-<div class="menu" id="menu"><a href="#proposito">A TROPA</a><a href="#cristo">NOSSA FÉ</a><a href="#palavra">VERSÍCULOS</a><a href="#mascote">PANTERA</a><a href="#som">NOSSO SOM</a><a href="#aura">FARMAR AURA</a></div>
+<div class="menu" id="menu"><a href="#proposito">A TROPA</a><a href="#cristo">NOSSA FÉ</a><a href="#palavra">VERSÍCULOS</a><a href="#mascote">PANTERA</a><a href="#aura">FARMAR AURA</a></div>
 <a href="#aura" class="pill">⚡ FARMAR AURA</a></div></nav>
 <main>
-<section class="hero" id="inicio"><div class="container hero-grid"><div class="hero-copy"><div class="eyebrow"><span></span>A TEMPORADA DA RESENHA COMEÇOU</div><h1>A AURA<strong>DESPERTOU.</strong></h1><p class="hero-desc">Disseram que o grupo azul tinha farmado aura... <strong>mas esqueceram que a Pantera Rosa estava chegando.</strong> Nossa resenha é grande. Nossa fé é ainda maior.</p><div class="hero-actions"><a class="btn hot" href="#som">♫ SOLTAR O SOM</a><a class="btn outline" href="#aura">⚡ LIBERAR AURA</a></div><div class="hero-details"><span><b>01</b>PROPÓSITO</span><span><b>100%</b>RESENHA</span><span><b>∞</b>AURA DE BRINCADEIRA</span></div></div><div class="mascot"><div class="sparkle one">✦</div><div class="sparkle two">⚡</div><div class="sparkle three">✦</div><svg role="img" aria-label="Mascote dos Mais Mais: pantera rosa divertida, de óculos e camiseta AURA Os Zé Manés"><use href="#pantera"></use></svg></div></div></section>
+<section class="hero" id="inicio"><div class="container hero-grid"><div class="hero-copy"><div class="eyebrow"><span></span>A TEMPORADA DA RESENHA COMEÇOU</div><h1>A AURA<strong>DESPERTOU.</strong></h1><p class="hero-desc">Disseram que o grupo azul tinha farmado aura... <strong>mas esqueceram que a Pantera Rosa estava chegando.</strong> Nossa resenha é grande. Nossa fé é ainda maior.</p><div class="hero-actions"><a class="btn hot" href="#aura">⚡ FARMAR AURA</a><a class="btn outline" href="#aura">⚡ LIBERAR AURA</a></div><div class="hero-details"><span><b>01</b>PROPÓSITO</span><span><b>100%</b>RESENHA</span><span><b>∞</b>AURA DE BRINCADEIRA</span></div></div><div class="mascot"><div class="sparkle one">✦</div><div class="sparkle two">⚡</div><div class="sparkle three">✦</div><svg role="img" aria-label="Mascote dos Mais Mais: pantera rosa divertida, de óculos e camiseta AURA Os Zé Manés"><use href="#pantera"></use></svg></div></div></section>
 <div class="ticker"><span>✦ CRISTO EM PRIMEIRO LUGAR ✦ AURA ROSA ✦ O GRUPO AZUL NÃO ESPERAVA POR ESSA ✦ MARANATA 2026 ✦ A RESENHA NÃO PARA ✦ CRISTO EM PRIMEIRO LUGAR ✦ AURA ROSA ✦ O GRUPO AZUL NÃO ESPERAVA POR ESSA ✦ MARANATA 2026 ✦ A RESENHA NÃO PARA ✦ </span></div>
 <section class="block" id="proposito"><div class="container"><div class="section-heading"><span class="label">01 / QUEM SOMOS</span><h2>FARMAR AURA É LEGAL.<br><em>VIVER A FÉ É MAIOR.</em></h2><p>O grupo azul fez um vídeo? A gente fez um site inteiro. 😂 No pré-campa, a competição é saudável. Na vida, somos uma só família em Cristo.</p></div><div class="cards"><article class="feature"><div class="emoji">🐆</div><h3>RESENHA ABSURDA</h3><p>Memes, figurinha, provocação amigável e pantera de óculos. A tropa rosa nunca fica sem assunto.</p></article><article class="feature"><div class="emoji">🤝</div><h3>JUNTOS SOMOS MAIS</h3><p>Se ganhar, comemora. Se perder, também. A amizade não depende do placar da gincana.</p></article><article class="feature"><div class="emoji">✝️</div><h3>CRISTO NO CENTRO</h3><p>Nossa fé não é um poder para vencer outros grupos. É o fundamento do nosso amor e da nossa esperança.</p></article></div></div></section>
 <section class="christ" id="cristo"><div class="container christ-inner"><div><span class="label">02 / O QUE IMPORTA</span><h2>NOSSA LUZ<br><em>VEM DELE.</em></h2><p>Mais importante que vencer qualquer desafio é refletir o amor de Jesus Cristo em tudo o que fazemos — até na resenha.</p><div class="quote-card">“Assim resplandeça a vossa luz diante dos homens...”<small>MATEUS 5:16 • TRECHO</small></div><a class="btn outline" href="https://www.bible.com/pt/bible/1608/MAT.5.16" target="_blank" rel="noopener noreferrer">LER NA BÍBLIA ↗</a></div><div><svg class="art" viewBox="0 0 480 450" role="img" aria-label="Representação simbólica de Jesus em uma paisagem iluminada"><defs><radialGradient id="halo"><stop stop-color="#fffae0" stop-opacity=".8"/><stop offset="1" stop-color="#ffe39c" stop-opacity="0"/></radialGradient></defs><circle cx="270" cy="159" r="175" fill="url(#halo)"/><circle cx="270" cy="160" r="56" fill="#ffe3a2" opacity=".5"/><path d="M0 370 Q90 270 190 366 Q270 286 480 358 V450 H0Z" fill="#5a1b53"/><path d="M190 380 Q238 327 262 252 Q268 243 285 252 Q312 325 358 383Z" fill="#f4d5c0"/><path d="M234 269 Q206 290 204 373 L253 371 271 271Z" fill="#7d3455"/><path d="M263 260 Q281 277 291 264 Q330 304 341 378 L269 377Z" fill="#f8dcc5"/><ellipse cx="270" cy="218" rx="29" ry="41" fill="#cc957b"/><path d="M241 218 Q225 154 268 163 Q311 167 300 225 Q285 188 267 193 Q247 190 241 218Z" fill="#402c35"/><path d="M245 230 Q248 268 270 264 Q292 261 296 229 Q287 247 277 247 L269 256 260 247 Q250 246 245 230Z" fill="#634044"/><path d="M268 260 Q281 247 298 258 L314 324 Q272 332 231 324 L239 264Z" fill="#eee4cc"/><path d="M234 291 Q196 318 184 374 M311 292 Q348 325 362 371" fill="none" stroke="#f7dec9" stroke-width="25" stroke-linecap="round"/><path d="M110 397 Q248 362 480 399 V451 H0V408Z" fill="#1b0a25"/></svg><div class="disclaimer">ILUSTRAÇÃO SIMBÓLICA E ARTÍSTICA • NÃO É RETRATO HISTÓRICO</div></div></div></section>
 <section class="block" id="palavra"><div class="container"><div class="section-heading"><span class="label">03 / MUNIÇÃO DE VERDADE</span><h2>O PODER ESTÁ<br><em>NA PALAVRA.</em></h2><p>Uma passagem de cada vez, a tropa cresce na fé. Leia o contexto: nenhum desses versículos promete vitória numa competição de acampamento.</p></div><div class="verse-filters" id="filters" aria-label="Filtrar versículos"><button class="chip" data-topic="todos" aria-pressed="true">TODOS</button><button class="chip" data-topic="força" aria-pressed="false">FORÇA</button><button class="chip" data-topic="coragem" aria-pressed="false">CORAGEM</button><button class="chip" data-topic="união" aria-pressed="false">UNIÃO</button><button class="chip" data-topic="amor" aria-pressed="false">AMOR</button></div><div class="verses" id="verses"></div><p class="verse-note">Textos breves ou paráfrases fiéis, com referências para consulta da passagem completa. A interpretação deve levar em conta o contexto bíblico.</p></div></section>
 <section class="maranata" id="maranata"><div class="container maranata-inner"><div class="maranata-symbol">✝</div><div><span class="label">04 / VOCÊ SABIA?</span><h2>MARANATA<span>.</span></h2><div class="translation">“Vem, Senhor!”</div><p>A expressão aramaica “Maranata” aparece em 1 Coríntios 16:22 e nos lembra da esperança na vinda de Cristo. O nome do acampamento é maior do que qualquer disputa!</p><a class="btn outline" target="_blank" rel="noopener noreferrer" href="https://www.bible.com/pt/bible/1608/1CO.16.22">1 CORÍNTIOS 16:22 ↗</a></div></div></section>
-<section class="block" id="mascote"><div class="container"><div class="section-heading"><span class="label">05 / NOSSO MASCOTE</span><h2>TRÊS MODOS.<br><em>UMA SÓ PANTERA.</em></h2><p>A pantera é o símbolo da resenha. Sem correntes. Com óculos, camiseta da tropa e, sempre, Cristo em primeiro lugar.</p></div><div class="gallery"><article class="gallery-card"><div class="gallery-art"><svg role="img" aria-label="Pantera rosa modo resenha"><use href="#pantera"></use></svg></div><div class="gallery-text"><small>SKIN 01</small><h3>MODO RESENHA</h3><p>Farmando aura até parado.</p></div></article><article class="gallery-card"><div class="gallery-art"><svg role="img" aria-label="Pantera rosa modo lendário"><use href="#pantera"></use></svg></div><div class="gallery-text"><small>SKIN 02</small><h3>MODO LENDÁRIO</h3><p>O grupo azul não tava preparado.</p></div></article><article class="gallery-card"><div class="gallery-art"><svg role="img" aria-label="Pantera rosa modo fé"><use href="#pantera"></use></svg></div><div class="gallery-text"><small>SKIN 03</small><h3>FÉ PRIMEIRO</h3><p>A resenha é nossa. A glória é de Deus.</p></div></article></div></div></section>
-<section class="audio-section" id="som"><div class="container"><div class="music-card" id="musicCard"><div><span class="label">06 / PRESENÇA DE AURA</span><h2>ATIVAR MODO LENDÁRIO.</h2><p>Não é o nosso hino: é uma <strong>trilha instrumental original de impacto</strong>, com graves, batida cinematográfica e tensão de batalha para fazer a pantera despertar. Começa somente quando você apertar o Play.</p><p class="verse-note">Quer comparar com a música de referência? <a style="color:#ffd6f0;text-decoration:underline" href="https://youtu.be/-xUkPo2q3zc" target="_blank" rel="noopener noreferrer">Ouça o exemplo enviado no YouTube ↗</a>. Esta trilha não usa nem reproduz o áudio do vídeo.</p></div><div class="music-controls"><button type="button" class="btn hot" id="musicButton" aria-pressed="false">▶ LIBERAR AURA</button><div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><label class="volume">VOLUME <input id="volume" type="range" min="0" max="100" value="38" aria-label="Volume da trilha"></label><span id="musicStatus" class="verse-note" role="status">Trilha desligada</span></div></div></div></section>
+<section class="block" id="mascote"><div class="container"><div class="section-heading"><span class="label">05 / NOSSO MASCOTE</span><h2>TRÊS MODOS.<br><em>UMA SÓ PANTERA.</em></h2><p>A pantera é o símbolo da resenha. Sem correntes, com óculos e camiseta da tropa. Agora você consegue ver as três artes completas — inclusive o versículo de Filipenses 4:13.</p></div><div class="gallery"><article class="gallery-card"><div class="gallery-art"><svg role="img" aria-label="Pantera rosa modo resenha"><use href="#pantera"></use></svg></div><div class="gallery-text"><small>SKIN 01</small><h3>MODO RESENHA</h3><p>Farmando aura até parado.</p></div></article><article class="gallery-card"><div class="gallery-art"><svg role="img" aria-label="Pantera rosa modo lendário"><use href="#pantera"></use></svg></div><div class="gallery-text"><small>SKIN 02</small><h3>MODO LENDÁRIO</h3><p>O grupo azul não tava preparado.</p></div></article><article class="gallery-card"><div class="gallery-art"><svg role="img" aria-label="Pantera rosa modo fé"><use href="#pantera"></use></svg></div><div class="gallery-text"><small>SKIN 03</small><h3>FÉ PRIMEIRO</h3><p>A resenha é nossa. A glória é de Deus.</p></div></article></div></div></section>
 <section class="block challenge" id="aura"><div class="container challenge-box"><div class="section-heading"><span class="label">07 / DESAFIO DO PRÉ-CAMPA</span><h2>QUANTO DE AURA<br><em>VOCÊ AGUENTA?</em></h2><p class="challenge-desc">Clique para farmar aura de brincadeira. Cada clique soma 10 pontos. Aos 1.000, desbloqueie o <strong>Modo Lendário da Pantera</strong>. O resultado fica salvo só neste dispositivo.</p><p style="color:#ffd4eb">✝ Na vida real, nossa força vem de Cristo e não dos pontos.</p></div><div class="score-panel"><span class="label">SEU TOTAL DE AURA</span><div class="counter" id="score" aria-live="polite">0</div><div class="level" id="level">NÍVEL 1 • ESQUENTANDO</div><div class="bar" role="progressbar" aria-label="Progresso para 1000 de aura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress"><i id="fill"></i></div><div class="controls"><button class="btn hot" type="button" id="farm">⚡ FARMAR +10</button><button class="btn outline" type="button" id="shareAura">COMPARTILHAR ↗</button><button class="btn outline" type="button" id="resetAura">ZERAR</button></div></div></div></section>
 <section class="final"><div class="container"><span class="label">MARANATA 2026 • GRUPO ROSA</span><h2>OS MAIS<br><em>MAIS!</em></h2><p>Somos a tropa rosa. Temos muita resenha, muita união e uma fé que vai além da brincadeira.</p><p><strong>A RESENHA É NOSSA. A GLÓRIA É DE DEUS!</strong></p><div class="buttons"><button class="btn hot" id="shareSite" type="button">📲 MANDAR NO GRUPO</button><a class="btn outline" href="#inicio">VOLTAR AO TOPO ↑</a></div></div></section>
 </main><footer><strong>OS MAIS MAIS</strong> • MARANATA 2026 • FEITO PARA RESENHA, FÉ E AMIZADE • SITE SEM MONETIZAÇÃO</footer>
@@ -107,77 +167,38 @@ $('farm').addEventListener('click',()=>{const prev=score;score=Math.min(score+10
 $('resetAura').addEventListener('click',()=>{score=0;save();updateScore();toast('Aura zerada. Começou outra resenha!');});
 $('shareAura').addEventListener('click',()=>share('⚡🐆 Farmei '+score.toLocaleString('pt-BR')+' pontos de aura no site dos Os Mais Mais! Cristo em primeiro lugar. Resenha no máximo!'));
 updateScore();
-// Trilha original de impacto, composta com Web Audio API. Nenhum áudio do YouTube ou Suno é importado.
-// O sintetizador começa somente após ação explícita do visitante (sem autoplay).
-let audioCtx=null,master=null,timer=null,currentStep=0,nextTime=0,noiseBuffer=null;
-const bpm=138, sixteenth=60/bpm/4;
-const notes={A2:45,C3:48,D3:50,E3:52,F3:53,G3:55,A3:57,C4:60,D4:62,E4:64,F4:65,G4:67,A4:69,C5:72,D5:74,E5:76,G5:79};
-function hz(midi){return 440*Math.pow(2,(midi-69)/12);}
-function synth(midi,time,duration,role='lead',volume=.08){
- if(!audioCtx||!master)return;
- const osc=audioCtx.createOscillator(),g=audioCtx.createGain(),f=audioCtx.createBiquadFilter();
- osc.type=role==='bass'?'sawtooth':role==='pad'?'triangle':'square';
- osc.frequency.setValueAtTime(hz(midi),time);
- f.type='lowpass';f.frequency.setValueAtTime(role==='bass'?370:role==='pad'?1050:2400,time);
- const peak=Math.max(.0002,volume);
- g.gain.setValueAtTime(.0001,time);
- g.gain.exponentialRampToValueAtTime(peak,time+(role==='pad'?.08:.008));
- g.gain.exponentialRampToValueAtTime(.0001,time+duration);
- osc.connect(f).connect(g).connect(master);osc.start(time);osc.stop(time+duration+.025);
+const videoId='-xUkPo2q3zc';
+// Reprodução de vídeo oficial do YouTube. O navegador decide se o autoplay COM SOM é permitido.
+// O player fica visível, com controles do próprio YouTube e link externo como alternativa.
+const intro=$('introScreen'), enter=$('enterSiteBtn'), miniMusic=$('miniMusic');
+const yt=$('youtubePlayer'), opener=$('openMusic');
+const videoUrl='https://www.youtube-nocookie.com/embed/'+videoId+'?autoplay=1&mute=0&loop=1&playlist='+videoId+'&playsinline=1&controls=1&rel=0';
+function openMusic(){
+  miniMusic.hidden=false;
+  opener.hidden=true;
+  yt.src=videoUrl;
+  $('musicHint').textContent='Se a música não começar, toque em ▶ no vídeo. Alguns navegadores bloqueiam áudio automático.';
 }
-function perc(time,volume=.04,duration=.09,frequency=2500){
- if(!noiseBuffer||!audioCtx)return;
- const src=audioCtx.createBufferSource(),filter=audioCtx.createBiquadFilter(),g=audioCtx.createGain();
- src.buffer=noiseBuffer;filter.type='highpass';filter.frequency.value=frequency;
- g.gain.setValueAtTime(Math.max(.0001,volume),time);g.gain.exponentialRampToValueAtTime(.0001,time+duration);
- src.connect(filter).connect(g).connect(master);src.start(time);src.stop(time+duration+.01);
+function closeMusic(){
+  // Remover src interrompe o áudio mesmo sem acesso aos controles internos do iframe.
+  yt.removeAttribute('src');
+  miniMusic.hidden=true;
+  opener.hidden=false;
 }
-function kick(time,vol=.32){
- if(!audioCtx)return;const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';
- o.frequency.setValueAtTime(150,time);o.frequency.exponentialRampToValueAtTime(41,time+.18);
- g.gain.setValueAtTime(vol,time);g.gain.exponentialRampToValueAtTime(.0001,time+.21);
- o.connect(g).connect(master);o.start(time);o.stop(time+.22);
-}
-const roots=[notes.A2,notes.F3-12,notes.D3,notes.E3];
-const chords=[[notes.A3,notes.C4,notes.E4],[notes.F3,notes.A3,notes.C4],[notes.D3,notes.F3,notes.A3],[notes.E3,notes.G3,notes.D4]];
-const motif=[72,76,79,76,74,72,69,71,72,76,79,81,79,76,74,71];
-function schedule(step,t){
- const bar=Math.floor(step/16)%4,pos=step%16,root=roots[bar],chord=chords[bar];
- if(pos===0){kick(t,.33);chord.forEach(n=>synth(n,t,1.65,'pad',.037));}
- if(pos===8)kick(t,.34);
- if(pos===4||pos===12){perc(t,.13,.15,1200);kick(t,.10);}
- if(pos%2===0)perc(t,.015,.045,4900);
- if(pos===0||pos===3||pos===6||pos===8||pos===11||pos===14)synth(root,t,.19,'bass',.145);
- if([0,2,4,7,8,10,12,14].includes(pos)){
-   let i=(bar*4+Math.floor(pos/2))%motif.length;
-   synth(motif[i],t,.2,'lead',.034);
- }
- if(pos===15)perc(t,.055,.15,3100);
-}
-function tick(){if(!audioCtx)return;while(nextTime<audioCtx.currentTime+.18){schedule(currentStep,nextTime);nextTime+=sixteenth;currentStep=(currentStep+1)%64;}}
-function stopMusic(){
- if(timer){clearInterval(timer);timer=null;}
- if(audioCtx){const ctx=audioCtx;audioCtx=null;ctx.close().catch(()=>{});}
- master=null;$('musicCard').classList.remove('playing');
- $('musicButton').textContent='▶ LIBERAR AURA';$('musicButton').setAttribute('aria-pressed','false');
- $('musicStatus').textContent='Trilha desligada';
-}
-async function startMusic(){
- const AC=window.AudioContext||window.webkitAudioContext;
- if(!AC){toast('Seu navegador não suporta esta trilha.');return;}
- try{
-  audioCtx=new AC();await audioCtx.resume();master=audioCtx.createGain();
-  master.gain.value=Number($('volume').value)/100*.55;master.connect(audioCtx.destination);
-  noiseBuffer=audioCtx.createBuffer(1,Math.round(audioCtx.sampleRate*.3),audioCtx.sampleRate);
-  const values=noiseBuffer.getChannelData(0);for(let i=0;i<values.length;i++)values[i]=Math.random()*2-1;
-  currentStep=0;nextTime=audioCtx.currentTime+.06;timer=setInterval(tick,70);tick();
-  $('musicCard').classList.add('playing');$('musicButton').textContent='⏸ PAUSAR TRILHA';
-  $('musicButton').setAttribute('aria-pressed','true');$('musicStatus').textContent='♫ MODO AURA ATIVADO';
- }catch{stopMusic();toast('Não foi possível tocar a trilha.');}
-}
-$('musicButton').addEventListener('click',()=>audioCtx?stopMusic():startMusic());
-$('volume').addEventListener('input',()=>{if(master&&audioCtx)master.gain.setTargetAtTime(Number($('volume').value)/100*.55,audioCtx.currentTime,.02);});
-window.addEventListener('pagehide',()=>{if(audioCtx)stopMusic();});
+enter.addEventListener('click',()=>{
+  const flash=$('introFlash');flash.classList.remove('active');void flash.offsetWidth;flash.classList.add('active');
+  openMusic();
+  intro.classList.add('hidden');document.body.classList.remove('intro-active');
+  window.setTimeout(()=>{intro.hidden=true;},750);
+});
+$('closeMusic').addEventListener('click',closeMusic);
+opener.addEventListener('click',openMusic);
+$('reloadMusic').addEventListener('click',()=>{
+  // Nova tentativa iniciada por clique, sem prometer contornar as políticas do navegador.
+  yt.removeAttribute('src');
+  yt.src=videoUrl;
+  $('musicHint').textContent='Se ainda não começar, toque em ▶ no vídeo ou abra no YouTube.';
+});
 
 // As artes originais da V2 substituem a versão vetorial quando adicionadas em assets/.
 function preferPhoto(selector,src,alt){const target=document.querySelector(selector);if(!target)return;const picture=new Image();picture.onload=()=>{const img=document.createElement('img');img.src=src;img.alt=alt;img.loading=selector.includes('gallery')?'lazy':'eager';img.decoding='async';img.className=selector==='.christ .art'?'art-photo':'';target.replaceWith(img);};picture.src=src;}
