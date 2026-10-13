@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#15051d">
+<meta name="description" content="AURA RUN: um jogo 2D dos Zé Manés para o Maranata 2026. Corra com a Pantera Rosa, colete aura e responda desafios bíblicos!">
+<meta property="og:title" content="🐆 AURA RUN — Os Zé Manés">
+<meta property="og:description" content="A pantera rosa entrou na corrida! Quantos pontos de aura você consegue farmar?">
+<meta property="og:image" content="https://os-mais-mais.vercel.app/assets/2ce24947-ec7f-4dc3-8f23-1fa68746e07c.png">
+<meta property="og:type" content="website">
+<title>AURA RUN — Os Zé Manés | Maranata 2026</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="game.css">
+<script src="game.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#game">Pular para o jogo</a>
+<div class="app">
+  <header class="app-header">
+    <a class="brand" href="/" aria-label="Voltar ao site dos Zé Manés">
+      <span class="brand-icon" aria-hidden="true">🐆</span><span>OS <strong>ZÉ MANÉS</strong><small>MARANATA 2026 • GRUPO ROSA</small></span>
+    </a>
+    <div class="top-actions">
+      <button class="small-button" id="soundButton" type="button" aria-pressed="false" title="Ativar ou silenciar efeitos sonoros" aria-label="Ativar som">♫</button>
+      <button class="small-button" id="pauseButton" type="button" aria-label="Pausar o jogo" title="Pausar" disabled>Ⅱ</button>
+    </div>
+  </header>
+  <main>
+    <div class="title-row">
+      <div><div class="eyebrow"><span class="spark"></span> ARCADE CRISTÃO • EDIÇÃO MARANATA</div><h1>AURA <span>RUN</span><span class="title-bolt">⚡</span></h1></div>
+      <div class="best-chip"><small>RECORDE</small><strong id="bestScore">0</strong></div>
+    </div>
+    <section id="game" class="game-shell" aria-label="Jogo Aura Run">
+      <div class="hud" aria-label="Pontuação e status">
+        <div class="hud-pill"><span>✦ AURA</span><strong id="score">0</strong></div>
+        <div class="hud-pill"><span>♡ VIDAS</span><strong id="hearts" class="hearts">♥ ♥ ♥</strong></div>
+        <div class="hud-pill"><span>◷ TEMPO</span><strong id="timer">65</strong></div>
+      </div>
+      <canvas id="gameCanvas" width="420" height="720" role="img" aria-label="Corrida 2D de três pistas. Use os botões ou arraste para mudar de pista e coletar estrelas rosa.">Seu navegador não suporta Canvas. Tente um navegador atualizado.</canvas>
+      <div class="world-bottom"><span id="zoneName">FLORESTA DA RESENHA</span><span id="comboText">COMBO ×1</span></div>
+      <div class="toast" id="gameToast" role="status" aria-live="polite"></div>
+      <section class="overlay" id="startOverlay" aria-labelledby="startTitle">
+        <div class="overlay-inner intro-panel">
+          <div class="mascot-ring"><svg class="intro-cat" viewBox="0 0 160 156" role="img" aria-label="Pantera rosa de óculos"><path d="M35 64 25 9 76 37 127 9 119 66" fill="#ff64bc" stroke="#a20e67" stroke-width="6" stroke-linejoin="round"/><path d="M41 57 38 29 63 47 M116 57 122 29 97 47" fill="#ffd0eb"/><ellipse cx="80" cy="79" rx="65" ry="62" fill="#ff69bc" stroke="#a20e67" stroke-width="6"/><path d="M42 63 Q60 53 78 62 L78 85 Q50 98 37 78Z M83 62 Q103 52 125 63 L122 79 Q103 98 83 85Z" fill="#0c0716" stroke="#2d0735" stroke-width="5"/><path d="M77 69H86" stroke="#1f0826" stroke-width="7"/><path d="M62 95 Q79 89 98 95 Q99 120 80 123 Q58 121 62 95Z" fill="#ffe1ef"/><path d="M70 100 80 108 91 100" fill="#df1785"/><path d="M71 115 Q80 124 90 115" stroke="#7b124c" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M24 92 3 88 M24 105 4 113 M137 92 156 88 M137 105 156 113" stroke="#ffe3f1" stroke-width="3" stroke-linecap="round"/></svg></div>
+          <span class="panel-kicker">🐆 A TROPA ROSA CHEGOU</span>
+          <h2 id="startTitle">A RESENHA<br><em>NÃO PARA!</em></h2>
+          <p>Desvie dos obstáculos, colete estrelas de aura e enfrente três desafios bíblicos no caminho para o Maranata!</p>
+          <div class="howto"><span>👆 DESLIZE PARA TROCAR DE PISTA</span><span>💗 3 VIDAS</span><span>✝️ FÉ EM PRIMEIRO LUGAR</span></div>
+          <button id="startButton" type="button" class="action primary">⚡ COMEÇAR A CORRIDA</button>
+          <p class="panel-footnote">A aura é brincadeira. Nossa alegria e esperança estão em Cristo.</p>
+        </div>
+      </section>
+      <section class="overlay" id="quizOverlay" aria-labelledby="quizTitle" hidden>
+        <div class="overlay-inner quiz-panel">
+          <span id="quizProgress" class="panel-kicker">📖 DESAFIO BÍBLICO 1/3</span>
+          <h2 id="quizTitle">HORA DA PALAVRA!</h2>
+          <p id="quizQuestion" class="quiz-question"></p>
+          <div id="quizChoices" class="quiz-choices" role="group" aria-label="Alternativas da pergunta"></div>
+          <p id="quizFeedback" class="quiz-feedback" role="status"></p>
+          <button id="quizNext" class="action primary" type="button" hidden>CONTINUAR CORRIDA →</button>
+          <div class="quiz-ref" id="quizReference"></div>
+        </div>
+      </section>
+      <section class="overlay" id="pauseOverlay" aria-labelledby="pauseTitle" hidden>
+        <div class="overlay-inner pause-panel">
+          <div class="panel-kicker">PAUSA NA RESENHA</div><h2 id="pauseTitle">TÁ TUDO BEM! 🐆</h2><p>Respira e volta quando estiver pronto.</p>
+          <button class="action primary" id="resumeButton" type="button">▶ CONTINUAR</button>
+          <button class="action secondary" id="exitButton" type="button">↻ COMEÇAR DE NOVO</button>
+        </div>
+      </section>
+      <section class="overlay" id="endOverlay" aria-labelledby="endTitle" hidden>
+        <div class="overlay-inner result-panel">
+          <div id="endIcon" class="result-icon" aria-hidden="true">🏆</div><span id="endTag" class="panel-kicker">MARANATA 2026</span>
+          <h2 id="endTitle">VOCÊ É LENDÁRIO!</h2>
+          <div class="result-score"><small>AURA FARMADA</small><strong id="finalScore">0</strong></div>
+          <p id="endMessage"></p>
+          <div class="result-reference">“Oh! Quão bom e quão suave é que os irmãos vivam em união!” — Salmos 133:1</div>
+          <button id="playAgain" class="action primary" type="button">↻ JOGAR NOVAMENTE</button>
+          <button id="shareButton" class="action secondary" type="button">📲 DESAFIAR OS AMIGOS</button>
+          <a class="text-link" href="/">← VOLTAR AO SITE DOS ZÉ MANÉS</a>
+        </div>
+      </section>
+    </section>
+    <div class="controls" aria-label="Controles da pantera">
+      <button id="leftButton" type="button" aria-label="Mover para esquerda"><span aria-hidden="true">‹</span> ESQUERDA</button>
+      <div class="control-center"><span>✦</span><small>FARME AURA!</small></div>
+      <button id="rightButton" type="button" aria-label="Mover para direita">DIREITA <span aria-hidden="true">›</span></button>
+    </div>
+    <div class="bottom-row"><span>📱 FEITO PARA CELULAR</span><span>✝️ CRISTO EM PRIMEIRO LUGAR</span></div>
+    <p class="game-disclaimer">Teclado: ← → para mover, P ou Espaço para pausar. Na corrida, os pontos e poderes são apenas elementos de jogo, não representam fé ou bênçãos. Seu recorde fica salvo apenas neste navegador.</p>
+  </main>
+  <footer><span>OS ZÉ MANÉS • MARANATA 2026</span><a href="/">VOLTAR AO SITE PRINCIPAL ↗</a></footer>
+</div>
+</body>
+</html>
