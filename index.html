@@ -63,10 +63,30 @@ body.intro-active{overflow:hidden}.intro-screen{position:fixed;inset:0;z-index:1
 }
 @media(prefers-reduced-motion:reduce){.gallery-card,.gallery-art img{transition:none}}
 
+
+/* PLAYER COMPACTO V4
+   Video incorporado permanece visível para o visitante poder tocar Play.
+   Não tentamos contornar as restrições de autoplay do navegador/YouTube. */
+.mini-music{width:min(232px,calc(100vw - 16px));right:10px;bottom:10px;padding:8px;border-radius:12px;max-height:calc(100dvh - 20px);overflow-y:auto;box-shadow:0 10px 32px #030004a0}
+.mini-music-header{gap:7px;min-height:26px;margin-bottom:6px}
+.mini-music-label{font-size:.66rem;letter-spacing:.03em;line-height:1.2}
+.mini-music iframe{display:block;position:static;min-height:200px;height:200px;width:100%;aspect-ratio:auto;border-radius:6px}
+.music-close{width:26px;height:26px;font-size:.8rem}
+.music-links{display:flex;flex-wrap:nowrap;gap:6px;margin-top:7px}
+.music-reload{font-size:.62rem;padding:7px 8px;border-radius:6px;white-space:nowrap}
+.music-links a{font-size:.62rem;white-space:nowrap}
+.music-help{margin-top:6px;border-top:1px solid #ffffff16;padding-top:5px;color:#d7b5cf;font-size:.63rem}
+.music-help summary{cursor:pointer;line-height:1.5}
+.music-help .music-hint{margin:5px 0 0;font-size:.65rem;line-height:1.4}
+@media(max-width:560px){
+ .mini-music{width:min(226px,calc(100vw - 16px));right:8px;bottom:8px;padding:8px;max-height:calc(100dvh - 16px)}
+ .mini-music iframe{height:200px;min-height:200px}
+}
+
 </style>
 </head>
 <body class="intro-active">
-<div class="intro-screen" id="introScreen" role="dialog" aria-modal="true" aria-labelledby="introTitle"><div class="intro-content"><img class="intro-panther" src="assets/pantera-poster.webp" alt="Pantera Rosa dos Mais Mais com aura" onerror="this.style.display='none'"><p class="intro-kicker">MARANATA 2026 • GRUPO ROSA</p><h1 class="intro-title" id="introTitle">VOCÊ ESTÁ PREPARADO PARA PRESENCIAR A <span>VERDADEIRA AURA?</span></h1><p class="intro-verse">“Tudo posso naquele que me fortalece.”<strong>Filipenses 4:13</strong></p><button id="enterSiteBtn" class="intro-button" type="button">⚡ ENTRAR COM A TRILHA DE AURA</button><p class="intro-note">A música tentará começar ao entrar. Se o navegador bloquear, é só tocar em ▶ no player que aparece.</p></div></div><div class="intro-flash" id="introFlash" aria-hidden="true"></div><aside id="miniMusic" class="mini-music" hidden aria-label="Player de música da aura"><div class="mini-music-header"><span class="mini-music-label">♫ TRILHA DE AURA • MARANATA</span><button type="button" class="music-close" id="closeMusic" aria-label="Fechar e parar a música">✕</button></div><iframe id="youtubePlayer" title="Vídeo musical da aura no YouTube" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p id="musicHint" role="status" class="music-hint">Se a música não começar, toque em ▶ no vídeo. Alguns navegadores bloqueiam áudio automático.</p><div class="music-links"><button type="button" id="reloadMusic" class="music-reload">↻ TENTAR NOVAMENTE</button><a href="https://youtu.be/-xUkPo2q3zc" target="_blank" rel="noopener noreferrer" title="Abrir música diretamente no YouTube">OUVIR NO YOUTUBE ↗</a></div></aside><button type="button" class="music-opener" id="openMusic" hidden>♫ ABRIR MÚSICA</button>
+<div class="intro-screen" id="introScreen" role="dialog" aria-modal="true" aria-labelledby="introTitle"><div class="intro-content"><img class="intro-panther" src="assets/pantera-poster.webp" alt="Pantera Rosa dos Mais Mais com aura" onerror="this.style.display='none'"><p class="intro-kicker">MARANATA 2026 • GRUPO ROSA</p><h1 class="intro-title" id="introTitle">VOCÊ ESTÁ PREPARADO PARA PRESENCIAR A <span>VERDADEIRA AURA?</span></h1><p class="intro-verse">“Tudo posso naquele que me fortalece.”<strong>Filipenses 4:13</strong></p><button id="enterSiteBtn" class="intro-button" type="button">⚡ ENTRAR COM A TRILHA DE AURA</button><p class="intro-note">A música tentará começar ao entrar. Se o navegador bloquear, é só tocar em ▶ no player que aparece.</p></div></div><div class="intro-flash" id="introFlash" aria-hidden="true"></div><aside id="miniMusic" class="mini-music" hidden aria-label="Player compacto da trilha de aura"><div class="mini-music-header"><span class="mini-music-label">♫ AURA ROSA</span><button type="button" class="music-close" id="closeMusic" aria-label="Fechar player e parar música">✕</button></div><iframe id="youtubePlayer" title="Reproduzir trilha de aura no YouTube" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><div class="music-links"><button type="button" id="reloadMusic" class="music-reload" title="Tentar iniciar a música novamente" aria-label="Tentar reproduzir novamente">↻ TENTAR</button><a href="https://youtu.be/-xUkPo2q3zc" target="_blank" rel="noopener noreferrer" title="Abrir a música no YouTube">YOUTUBE ↗</a></div><details class="music-help"><summary>Não está tocando?</summary><p id="musicHint" role="status" class="music-hint">Toque em ▶ no vídeo; seu navegador pode bloquear a reprodução automática com som.</p></details></aside><button type="button" class="music-opener" id="openMusic" hidden>♫ ABRIR MÚSICA</button>
 
 <a class="skip" href="#inicio">Pular para o conteúdo</a>
 <!-- Arte vetorial original: mascote felino estilizado, criada exclusivamente com SVG/CSS. -->
