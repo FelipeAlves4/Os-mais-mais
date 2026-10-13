@@ -1,0 +1,101 @@
+/* OS ZÉ MANÉS • EXPERIÊNCIA MARANATA V3
+   Zero dependências externas; respeita reduced-motion e telas pequenas. */
+:root { --auraV3: #ff3daf; --haloV3: #ffd3f0; }
+html { scroll-padding-top: 88px; }
+body { background-image: radial-gradient(ellipse 60vw 40vw at 50% 20%, #4c123714, transparent 85%); }
+body.portal-open { overflow:hidden; }
+.progress-rail { position:fixed; z-index:85; inset:0 0 auto; height:3px; pointer-events:none; background:#f72c9a25; }
+.progress-rail > span {display:block; height:100%; transform:scaleX(0); transform-origin:left; background:linear-gradient(90deg,#ffbde8,#fc258e,#b970ff); box-shadow:0 0 13px #ff53b9;}
+.hero-copy .hero-new-label {display:inline-flex; align-items:center;gap:8px;margin-top:13px;border-radius:999px;background:#ff42ab19;border:1px solid #fc62b75b;color:#ffc3e2;padding:8px 13px;font-size:.64rem;letter-spacing:.15em;font-weight:900;}
+.hero-actions .v3-cine-btn {border-color:#ff9bd4b0; background:rgba(23,3,26,.66);}
+.hero-actions .v3-cine-btn:hover {background:#ff48b336;box-shadow:0 0 28px #ff48b337;}
+.hero:before {animation-duration:49s;}
+.hero:after {pointer-events:none;}
+.hero-grid{isolation:isolate;}
+.hero .mascot img{transition:filter .5s; filter:drop-shadow(0 12px 30px #ff1e9870);}
+.hero .mascot:hover img{filter:drop-shadow(0 0 55px #ff4399a0);}
+.v3-hairline {height:1px;background:linear-gradient(90deg,transparent,#fb66b583,transparent);}
+.v3-band {display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:.67rem;letter-spacing:.11em;font-weight:850;color:#f0cee2;margin:6px 0 0;}
+.v3-band .v3-star {color:#ff76c9;}
+
+/* Arena bíblica / mini-desafio */
+.arena-v3 {padding:110px 0; position:relative;overflow:hidden; background:
+ radial-gradient(ellipse 46% 65% at 85% 20%,#e02e8c33,transparent 80%),
+ radial-gradient(ellipse 45% 58% at 8% 85%,#8e45ca28,transparent 80%),#0a0713;
+ border-top:1px solid #fa7bc12b;border-bottom:1px solid #fa7bc12b;}
+.arena-v3:before{content:'✦';position:absolute;right:4%;top:-8%;font-size:min(37vw,500px);line-height:1;color:#f84daa10;pointer-events:none;}
+.arena-v3-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;gap:clamp(22px,5vw,70px);position:relative;}
+.arena-v3-copy h2,.identity-v3 h2{font-size:clamp(2.9rem,6.5vw,6.2rem);line-height:.93;letter-spacing:-.07em;margin:14px 0 21px;font-weight:1000;text-transform:uppercase;}
+.arena-v3-copy h2 span,.identity-v3 h2 span{color:#fd5cbb;}
+.arena-v3-copy p,.identity-v3-copy p{max-width:500px;line-height:1.7;color:#dac5df;font-size:1rem;}
+.arena-small-note{display:flex;gap:9px;align-items:start;font-size:.82rem;color:#e6cfda;border-left:2px solid #ffa0d6;padding:9px 0 9px 17px;margin-top:27px;}
+.arena-v3-panel{border:1px solid #ed63bd82;border-radius:22px;padding:clamp(20px,3.6vw,34px);background:linear-gradient(140deg,#30123d,#190b23 60%,#2a0b27);box-shadow:0 20px 70px #0007,0 0 50px #f7288530;min-height:400px;}
+.arena-topline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:23px;color:#ffbee3;font-weight:950;font-size:.71rem;letter-spacing:.1em;}
+.arena-topline strong{font-size:.8rem;background:#ff53b521;padding:8px 11px;border:1px solid #fd7cc64d;border-radius:99px;color:#fff;}
+.arena-progress{height:7px;background:#ffffff1c;border-radius:20px;overflow:hidden;margin-bottom:31px;}
+.arena-progress span{display:block;height:100%;width:25%;background:linear-gradient(90deg,#ffa4d9,#fc249e);border-radius:20px;transition:width .3s;}
+.arena-question{font-weight:850;font-size:clamp(1.32rem,2.4vw,1.8rem);line-height:1.3;margin:0 0 22px;}
+.arena-options{display:grid;gap:10px;}
+.arena-option{text-align:left;color:#fff;border:1px solid #ffc8e53d;padding:14px 16px;border-radius:12px;background:#ffffff09;font-weight:750;min-height:50px;transition:background .15s,border-color .15s;}
+.arena-option:hover:not(:disabled){border-color:#fd7fc1;background:#ff72c42a;}
+.arena-option:disabled{cursor:default;opacity:.75;}
+.arena-option.is-right{border-color:#c4f1c7;background:#275c455c;color:#fafff5;opacity:1;}
+.arena-option.is-wrong{border-color:#ffa7c9;background:#7f21425e;}
+.arena-feedback{margin-top:16px;min-height:40px;color:#f2d6e9;line-height:1.55;font-size:.87rem;}
+.arena-feedback b{color:#ffbcdf;}
+.arena-next{margin-top:8px;width:100%;}
+.arena-finish{text-align:center;}
+.arena-finish .final-emoji{font-size:3.1rem;margin:0 0 10px;}
+.arena-finish h3{font-size:2rem;margin:6px 0 12px;line-height:1.15;}
+.arena-finish p{color:#eed5e6;line-height:1.6;}
+.arena-finish-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:21px;}
+
+/* Criador de card compartilhável (canvas local, sem upload de nomes) */
+.identity-v3 {position:relative;padding:105px 0;overflow:hidden;background:
+ radial-gradient(ellipse 55% 75% at 14% 37%,#d22d8430,transparent 73%),
+ linear-gradient(135deg,#18071c,#120718 70%);}
+.identity-v3-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,6vw,90px);align-items:center;}
+.identity-v3 .label{color:#ffb8db;}
+.identity-v3 input{width:100%;background:#ffffff0a;border:1px solid #fa8bc66a;color:white;border-radius:10px;padding:14px 17px;margin:7px 0 13px;outline-offset:3px;}
+.identity-v3 input:focus{border-color:#ff94dc;box-shadow:0 0 0 3px #f529ab24;}
+.identity-v3 label{font-size:.8rem;color:#f6cce7;font-weight:850;}
+.identity-v3 .card-hint{font-size:.75rem;color:#c4a8cb;margin-top:10px;}
+.identity-v3 .identity-actions{display:flex;gap:9px;flex-wrap:wrap;margin:8px 0;}
+.identity-preview{position:relative;border:1px solid #fb7abe8c;border-radius:20px;padding:15px;background:linear-gradient(135deg,#421240,#190b2c);box-shadow:0 23px 70px #0008;}
+.identity-preview .poster-v3{position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:radial-gradient(circle at center,#a72189,#20081f 70%);}
+.identity-preview .poster-v3 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.79;}
+.identity-preview .poster-v3:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,#0b031018 0%,transparent 33%,#130015ad 65%,#100011ed 100%);}
+.poster-v3-text{position:absolute;z-index:2;bottom:6%;width:100%;padding:14px 18px;text-align:center;}
+.poster-v3-text small{font-size:.65rem;font-weight:950;letter-spacing:.19em;color:#ffe1ee;}
+.poster-v3-text strong{font-size:clamp(1.7rem,3.5vw,3.2rem);display:block;overflow-wrap:anywhere;letter-spacing:-.05em;text-transform:uppercase;text-shadow:0 2px 12px #000;}
+.poster-v3-text em{font-style:normal;color:#ffc0e4;font-size:.74rem;letter-spacing:.1em;font-weight:900;}
+
+/* Revelação cinematográfica manual / desbloqueio de 1000 pontos */
+.portal-v3[hidden]{display:none!important}
+.portal-v3{position:fixed;inset:0;z-index:1200;display:grid;place-items:center;padding:18px;overflow:auto;background:radial-gradient(ellipse at center,#9c157ce0 0%,#270822f8 48%,#08030dfa 100%);animation:portalEnter .4s ease;}
+.portal-v3:before{content:'';position:absolute;inset:-20%;background:repeating-conic-gradient(from 8deg at center,transparent 0deg 14deg,#ff84d311 15deg 16deg,transparent 17deg 28deg);pointer-events:none;animation:portalSpin 35s linear infinite;}
+.portal-v3-inner{position:relative;width:min(100%,790px);text-align:center;display:grid;justify-items:center;gap:11px;background:#11031687;border:1px solid #ff8ed965;border-radius:22px;padding:clamp(20px,4vw,36px);box-shadow:0 0 100px #ff31b37a;}
+.portal-v3-inner img{width:min(50vw,255px);max-height:31vh;object-fit:contain;filter:drop-shadow(0 0 32px #ff6fc6);}
+.portal-v3-inner h2{font-weight:1000;font-size:clamp(2.4rem,7vw,5.2rem);line-height:.9;letter-spacing:-.07em;margin:8px 0;color:#fff;}
+.portal-v3-inner h2 span{color:#ff8ad9;}
+.portal-v3-inner p{margin:0;max-width:500px;color:#f2d4eb;line-height:1.6;}
+.portal-v3-verse{font-weight:900;font-size:.78rem;letter-spacing:.13em;color:#ffe4a2!important;}
+.portal-close{position:absolute;top:11px;right:13px;width:42px;height:42px;display:grid;place-items:center;border-radius:50%;border:1px solid #ffffff6a;background:#fff2;color:#fff;font-weight:900;}
+.portal-close:hover{background:#ffffff35;}
+.portal-close-button{margin-top:10px;}
+@keyframes portalEnter{from{opacity:0;transform:scale(1.045)}to{opacity:1;transform:scale(1)}}
+@keyframes portalSpin{to{transform:rotate(360deg)}}
+@media(max-width:880px){
+ .arena-v3-grid,.identity-v3-grid{grid-template-columns:1fr}
+ .identity-preview{width:min(100%,500px);margin:auto}
+}
+@media(max-width:600px){
+ .arena-v3,.identity-v3{padding:68px 0}
+ .arena-v3-panel{padding:20px;min-height:350px}
+ .arena-v3-copy h2,.identity-v3 h2{font-size:clamp(2.65rem,11.5vw,4.3rem)}
+ .identity-v3 .identity-actions>*{flex:1}
+ .portal-v3-inner img{width:min(60vw,230px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .progress-rail>span,.arena-progress span,.hero .mascot img,.portal-v3,.portal-v3:before{animation:none!important;transition:none!important}
+}
