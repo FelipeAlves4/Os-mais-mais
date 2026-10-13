@@ -99,3 +99,5 @@ body.portal-open { overflow:hidden; }
 @media(prefers-reduced-motion:reduce){
  .progress-rail>span,.arena-progress span,.hero .mascot img,.portal-v3,.portal-v3:before{animation:none!important;transition:none!important}
 }
+
+.arena-next[hidden],#arenaFinish[hidden],#arenaPlaying[hidden],#v3Notice[hidden]{display:none!important}
