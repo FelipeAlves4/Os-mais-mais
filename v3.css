@@ -101,3 +101,6 @@ body.portal-open { overflow:hidden; }
 }
 
 .arena-next[hidden],#arenaFinish[hidden],#arenaPlaying[hidden],#v3Notice[hidden]{display:none!important}
+
+/* Notificação das ações de compartilhar/salvar: sempre visível, mas não bloqueante. */
+#v3Notice:not([hidden]){display:block;position:fixed;z-index:1300;left:50%;bottom:22px;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 28px);padding:12px 18px;margin:0;color:#fff;background:#321039;border:1px solid #f887ce;border-radius:13px;box-shadow:0 9px 40px #000b;font-weight:850;font-size:.85rem;text-align:center;pointer-events:none;}
