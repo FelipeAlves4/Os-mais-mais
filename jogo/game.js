@@ -156,6 +156,49 @@ $('shareButton').addEventListener('click',async()=>{
  try{if(navigator.share){await navigator.share({title:'AURA RUN — Os Zé Manés',text:msg});return}}catch(e){if(e.name==='AbortError')return}
  try{await navigator.clipboard.writeText(msg);notify('DESAFIO COPIADO!')}catch{window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer')}
 });
+
+/* Gera um pôster de aura em PNG local: nenhuma pontuação ou imagem é enviada a servidores. */
+$('saveCardButton').addEventListener('click',async()=>{
+ const button=$('saveCardButton');button.disabled=true;button.textContent='⌛ GERANDO CARD...';
+ try{
+  const pic=document.createElement('canvas');pic.width=1080;pic.height=1350;
+  const p=pic.getContext('2d');if(!p)throw Error('Canvas não suportado');
+  const bg=p.createLinearGradient(0,0,1080,1350);
+  bg.addColorStop(0,'#170a35');bg.addColorStop(.55,'#a21972');bg.addColorStop(1,'#1b081f');
+  p.fillStyle=bg;p.fillRect(0,0,1080,1350);
+  const art=await new Promise(resolve=>{
+   const image=new Image();image.decoding='async';
+   image.onload=()=>resolve(image);image.onerror=()=>resolve(null);
+   image.src='../assets/pantera-original.webp';
+   if(image.complete&&image.naturalWidth)resolve(image);
+  });
+  if(art){
+    const ratio=Math.max(1080/art.naturalWidth,1050/art.naturalHeight);
+    const w=art.naturalWidth*ratio,h=art.naturalHeight*ratio;
+    p.drawImage(art,(1080-w)/2,(1050-h)/2,w,h);
+  }
+  const veil=p.createLinearGradient(0,200,0,1350);
+  veil.addColorStop(0,'#12001608');veil.addColorStop(.52,'#1200163c');veil.addColorStop(.79,'#18051be9');veil.addColorStop(1,'#08040eea');
+  p.fillStyle=veil;p.fillRect(0,0,1080,1350);
+  p.textAlign='center';p.textBaseline='middle';
+  p.shadowColor='#e80c94';p.shadowBlur=20;
+  p.fillStyle='#ffe6f6';p.font='1000 43px system-ui,sans-serif';
+  p.fillText('✦ MARANATA 2026 • GRUPO ROSA ✦',540,94);
+  p.shadowBlur=0;
+  p.font='1000 110px system-ui,sans-serif';p.fillStyle='#fff';p.fillText('AURA RUN',540,976);
+  p.font='900 47px system-ui,sans-serif';p.fillStyle='#ffafd9';p.fillText('OS ZÉ MANÉS',540,1052);
+  p.font='1000 106px system-ui,sans-serif';p.fillStyle='#fff2c1';p.fillText(score.toLocaleString('pt-BR'),540,1171);
+  p.font='900 30px system-ui,sans-serif';p.fillStyle='#ffe9f5';p.fillText('PONTOS DE AURA • COMBO '+maxCombo,540,1232);
+  p.font='700 24px system-ui,sans-serif';p.fillStyle='#fff2ca';p.fillText('A RESENHA É NOSSA. A GLÓRIA É DE DEUS!',540,1305);
+  const blob=await new Promise((resolve,reject)=>pic.toBlob(b=>b?resolve(b):reject(Error('Falha no PNG')),'image/png'));
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='aura-run-ze-manes-'+score+'.png';a.hidden=true;document.body.append(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),9000);
+  notify('🐆 CARD SALVO! MANDE NO GRUPO');
+ }catch(e){notify('NÃO FOI POSSÍVEL GERAR O CARD');}
+ finally{button.disabled=false;button.textContent='🖼️ SALVAR CARD DE AURA';}
+});
+
 function rand(a,b){return a+Math.random()*(b-a)}
 function spawn(){
  const lanes=[0,1,2].sort(()=>Math.random()-.5),count=Math.random()<.34?2:1;
